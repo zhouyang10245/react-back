@@ -35,9 +35,8 @@ export default function LeftAside() {
       {routers.map((ele: RouteFace, index) => {
         if (ele.chidldren && ele.chidldren.length > 0) {
           return (
-            <li className="parent-items">
+            <li className="parent-items" key={index}>
               <ParentItem
-                key={index}
                 name={ele.name}
                 chidldren={ele.chidldren}
               ></ParentItem>
@@ -45,8 +44,8 @@ export default function LeftAside() {
           )
         } else {
           return (
-            <li className="parent-items">
-              <ChildItem key={index} {...ele}></ChildItem>
+            <li className="parent-items" key={index}>
+              <ChildItem {...ele}></ChildItem>
             </li>
           )
         }

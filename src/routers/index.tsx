@@ -1,11 +1,11 @@
 import HomeLayout from '../layout/index'
 import Login from '../pages/login/index'
-const { HashRouter, Route, Switch, Redirect } = require('react-router-dom')
+const { BrowserRouter, Route, Switch, Redirect } = require('react-router-dom')
 
 function App() {
   return (
     <div className="App">
-      <HashRouter>
+      <BrowserRouter>
         <div className="contain">
           <Switch>
             <Route path="/login" component={Login} />
@@ -13,7 +13,7 @@ function App() {
             <Redirect to={'/login'} />
           </Switch>
         </div>
-      </HashRouter>
+      </BrowserRouter>
     </div>
   )
 }
